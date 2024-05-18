@@ -2,32 +2,8 @@ package zerobsp
 
 import "github.com/Anaxarchus/zero-gdscript/pkg/vector2"
 
-func Defragment(tree *BspTree) []*BspTree {
-	res := []*BspTree{tree}
-	// iterate over all tree leaves
-	for _, a := range tree.Leaves {
-		for _, b := range tree.Leaves {
-			if a == b {
-				continue
-			}
-			// check if they are valid for merger
-			merge := canMerge(a, b)
-
-			// calculate a new rect from the joined areas
-			xPos := min(a.Position.X, b.Position.X)
-			yPos := max(a.Position.Y, b.Position.Y)
-			width := 0.0
-			height := 0.0
-			if a.Position.X > b.Position.X {
-				yPos = 
-			}
-			size := vector2.New(max(a.Position.X, b.Position.X))
-			// create new trees from the new area and from the remainder area if there is a remainder
-			// create a new tree and set root as new BspNode
-		}
-	}
-	return res
-}
+//func Defragment(tree *BspTree) []*BspTree {
+//}
 
 func canMerge(a, b *BspNode) bool {
 	// two nodes can merge if:
